@@ -21,17 +21,23 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
-    'django.contrib.staticfiles',
+
+    "whitenoise.runserver_nostatic", # new
+    "django.contrib.staticfiles",
 
     'shop',
-    'ckeditor',
 
+    #3rd
+    'ckeditor',
     'django.contrib.humanize',
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+
+    "whitenoise.middleware.WhiteNoiseMiddleware", # 3rd
+
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -44,7 +50,9 @@ ROOT_URLCONF = 'src.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR / 'templates'],
+        'DIRS': [
+            BASE_DIR / 'templates'
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -96,8 +104,11 @@ USE_TZ = True
 
 
 
-STATIC_URL = '/static/'
-STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static/'),)
+STATIC_URL = "/static/"
+STATICFILES_DIRS = [BASE_DIR / "static"] # new
+STATIC_ROOT = BASE_DIR / "staticfiles" # new
+STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage" # new
+
 
 MEDIA_URL = '/uploads/'
 MEDIA_ROOT = BASE_DIR / 'uploads'
