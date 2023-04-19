@@ -1,0 +1,395 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <title>Document</title>
+  </head>
+  <body>
+
+    <style type="text/css">
+      
+      @import url("https://fonts.googleapis.com/css2?family=Explora&family=Indie+Flower&family=Noto+Sans+Cherokee&family=Roboto:wght@300;400;500;700&family=Satisfy&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Explora&family=Indie+Flower&family=Noto+Sans+Cherokee&family=Roboto:wght@100;300;900&family=Satisfy&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Explora&family=Indie+Flower&family=Noto+Sans+Cherokee&family=Raleway:wght@100;200;300;400;500;600;700;800;900&family=Roboto:wght@100;300;900&family=Satisfy&display=swap");
+
+*,
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Raleway", sans-serif;
+}
+
+/* Scroll */
+::-webkit-scrollbar {
+  width: 10px;
+  background-color: #000;
+}
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: #fff;
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+.title {
+  display: flex;
+  text-align: center;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  margin-bottom: 5%;
+}
+
+.title p {
+  margin-top: 10px;
+  width: 50%;
+}
+
+.border {
+  border: 1px solid black;
+  width: 550px;
+  margin: 10px 0 10px 0;
+}
+
+.border_2 {
+  border: 1px solid black;
+  width: 100%;
+  margin: 10px 0 10px 0;
+}
+
+.container {
+  width: 100%;
+  background: #fff;
+  border-radius: 6px;
+  padding: 20px 60px 30px 40px;
+}
+
+.container .content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.left-side {
+  width: 25%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 15px;
+  position: relative;
+}
+
+.details {
+  margin: 14px;
+  text-align: center;
+}
+
+.text-one,
+.text-two {
+  font-size: 15px;
+  color: #afafb6;
+}
+.right-side {
+  width: 100%;
+  margin-left: 75px;
+}
+.topic-text {
+  font-size: 23px;
+  font-weight: 600;
+  color: black;
+  padding-bottom: 30px;
+}
+
+.map {
+  width: 90%;
+  height: 400px;
+  border-radius: 16px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 950px) {
+  .container {
+    padding: 30px 40px 40px 35px;
+  }
+
+  .title p {
+    width: 100%;
+  }
+}
+
+@media (max-width: 820px) {
+  .container {
+    height: 100%;
+  }
+  .container .content {
+    flex-direction: column-reverse;
+  }
+
+  .title p {
+    width: 100%;
+  }
+}
+
+/* Footer */
+footer {
+  width: 100%;
+  margin-top: 10%;
+  position: relative;
+  height: auto;
+  background-color: black;
+  font-family: "Raleway", sans-serif;
+}
+
+footer .col {
+  width: 190px;
+  height: auto;
+  float: left;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  padding: 0px 20px 20px 20px;
+}
+
+footer .col h1 {
+  margin: 0;
+  padding: 0;
+  font-family: inherit;
+  font-size: 12px;
+  line-height: 17px;
+  padding: 20px 0px 5px 0px;
+  color: white;
+  font-weight: normal;
+  text-transform: uppercase;
+  letter-spacing: 0.25em;
+}
+
+footer .col ul li a {
+  color: #999999;
+  font-size: 14px;
+  font-family: inherit;
+  font-weight: bold;
+  padding: 5px 0px 5px 0px;
+  cursor: pointer;
+  transition: 0.2s;
+  -webkit-transition: 0.2s;
+  -moz-transition: 0.2s;
+}
+
+footer .col ul li a:hover {
+  color: #ffffff;
+  transition: 0.1s;
+  -webkit-transition: 0.1s;
+  -moz-transition: 0.1s;
+}
+
+footer .col ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+footer .col ul li {
+  padding: 5px 0px 5px 0px;
+}
+
+.social ul li {
+  display: inline-block;
+  padding-right: 5px !important;
+}
+
+marquee {
+  font-family: "Raleway", sans-serif;
+  font-weight: 600;
+  font-size: 15px;
+  color: black;
+  background: white;
+}
+
+.clearfix {
+  clear: both;
+}
+
+@media only screen and (min-width: 1280px) {
+  main {
+    width: 1200px;
+    margin: 0 auto;
+  }
+}
+@media only screen and (max-width: 1139px) {
+  main .social {
+    width: 1000px;
+    display: block;
+  }
+
+  .social h1 {
+    margin: 0px;
+  }
+}
+@media only screen and (max-width: 950px) {
+  footer .col {
+    width: 33%;
+  }
+
+  footer .col h1 {
+    font-size: 14px;
+  }
+
+  footer .col ul li {
+    font-size: 13px;
+  }
+}
+@media only screen and (max-width: 500px) {
+  footer .col {
+    width: 50%;
+  }
+
+  footer .col h1 {
+    font-size: 14px;
+  }
+
+  footer .col ul li {
+    font-size: 13px;
+  }
+}
+@media only screen and (max-width: 340px) {
+  footer .col {
+    width: 100%;
+  }
+}
+
+      
+    </style>
+
+    <div class="wrapper">
+      <div class="container">
+        <div class="title">
+          <h2>Магазин Domino</h2>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum,
+            explicabo consectetur eius esse architecto vitae magnam sed nam
+            eaque exercitationem enim, asperiores omnis optio necessitatibus
+            sunt, natus totam doloremque voluptatum!
+          </p>
+        </div>
+        <div class="border_2"></div>
+        <div class="content">
+          <div class="left-side">
+            <div class="address details">
+              <i class="fas fa-map-marker-alt"></i>
+              <div class="topic">Address</div>
+              <div class="text-one">Maxim Gorka, Primus school</div>
+            </div>
+            <div class="phone details">
+              <i class="fas fa-phone-alt"></i>
+              <div class="topic">Phone</div>
+              <div class="text-one"><a href="tel:+4733378901">+998999999999</a></div>
+              <div class="text-two"><a href="tel:+4733378901">+998999999999</a></div>
+            </div>
+            <div class="email details">
+              <i class="fas fa-envelope"></i>
+              <div class="topic">Emails</div>
+              <div class="text-one">example@example.com</div>
+              <div class="text-two">example@example.com</div>
+            </div>
+          </div>
+          <div class="right-side">
+            <div class="topic-text">Map</div>
+            <iframe class="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2943.589489292071!2d59.618136575896344!3d42.457749771183956!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x41dd9b40afdd4289%3A0x6d95355fcc5f440d!2sPrimus%20School%20Nukus!5e0!3m2!1sru!2s!4v1681417792957!5m2!1sru!2s" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+        </div>
+      </div>
+
+      <footer>
+          <main>
+            <!-- Header в Footer -->            
+            <div class="col">
+              <h1>Quick Links</h1>
+              <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Products</a></li>
+              </ul>
+            </div>
+
+            <!-- Вопросы -->
+            <div class="col">
+              <h1>Help</h1>
+              <ul>
+                <li><a href="#">How is the order?</a></li>
+                <li><a href="#">How to return money?</a></li>
+                <li><a href="#">Track my order</a></li>
+              </ul>
+            </div>
+
+            <!-- Категория -->
+            <div class="col">
+              <h1>Category Name</h1>
+              <ul>
+                <li><a href="#">Page Name</a></li>
+                <li><a href="#">Page Name</a></li>
+                <li><a href="#">Page Name</a></li>
+                <li><a href="#">Page Name</a></li>
+                <li><a href="#">Page Name</a></li>
+                <li><a href="#">Page Name</a></li>
+              </ul>
+            </div>
+
+            <!-- Категория -->
+            <div class="col">
+              <h1>Category Name</h1>
+              <ul>
+                <li><a href="#">Page Name</a></li>
+                <li><a href="#">Page Name</a></li>
+                <li><a href="#">Page Name</a></li>
+                <li><a href="#">Page Name</a></li>
+                <li><a href="#">Page Name</a></li>
+                <li><a href="#">Page Name</a></li>
+              </ul>
+            </div>
+
+            <!-- Категория -->
+            <div class="col">
+              <h1>Category Name</h1>
+              <ul>
+                <li><a href="#">Page Name</a></li>
+                <li><a href="#">Page Name</a></li>
+                <li><a href="#">Page Name</a></li>
+                <li><a href="#">Page Name</a></li>
+                <li><a href="#">Page Name</a></li>
+                <li><a href="#">Page Name</a></li>
+              </ul>
+            </div>
+
+            <!-- Социалки -->
+            <div class="col social">
+              <h1>Social</h1>
+              <ul>
+                <li><i class="fa-brands fa-tiktok" style="color: #ffffff; font-size: 20px;"></i></li>
+                <li><i class="fa-brands fa-telegram" style="color: #ffffff; font-size: 20px;"></i></li>
+                <li><i class="fa-brands fa-instagram" style="color: #ffffff; font-size: 20px;"></i></li>
+              </ul>
+            </div>
+            <div class="clearfix"></div>
+          </main>
+
+      </footer>
+    </div>
+
+    <script src="index.js"></script>
+  </body>
+</html>
