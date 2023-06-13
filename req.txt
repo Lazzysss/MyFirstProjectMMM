@@ -7,3 +7,4 @@ sqlparse==0.4.3
 tzdata==2023.3
 whitenoise==6.0.0
 hello=why
+world=hello
