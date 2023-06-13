@@ -33,6 +33,17 @@ def index(request):
           }
      )
 
+def by_category(request, slug):
+    products = Product.objects.filter(category=slug)
+    categories = Category.objects.all()
+    current_category = Category.objects.get(slug=category_id)
+    context = {
+        'products': products,
+        'categories': categories,
+        'current_category': current_category,
+    }
+    return render(request, 'onshop/categories.html', context)
+
 
 def product_list(request):
      return render(

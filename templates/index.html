@@ -1,5 +1,4 @@
-{% load static %}
-{% load humanize %}
+{% load static %} {% load humanize %}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -10,162 +9,258 @@
 
     <title>Domino Shop</title>
 
+    <link rel="stylesheet" href="{% static 'style.css' %}" />
+
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"
     />
-    <link rel="stylesheet" href="{% static 'style.css' %}" />
     <link rel="icon" href="" type="image/x-icon" />
-
   </head>
 
   <body>
-    <div class="img">
-      <div class="img1"></div>
-      <div class="img2"></div>
-      <div class="img3"></div>
-      <div class="ten"></div>
-    </div>
-    <div class="person">
-      <div class="left">
-        <img src="/uploads/img/shop1.png" alt="" />
-      </div>
-      <div class="right">
-        <img src="/uploads/img/shop2.png" alt="" />
-      </div>
-    </div>
-
-    <section class="main">
-      <header>
-        <div class="container">
-          <div class="header">
-            <div class="logo">
-              <a href="/" style="text-decoration: none; color: white;">Domino</a>
-            </div>
-            <ul class="navbar">
-              <a href="{% url 'products' %}">
-                <li>Products</li>
-              </a>
-              <a href="{% url 'contacts' %}">
-                <li>Contact</li>
-              </a>
-              <a href="{% url 'liked' %}">
-                <li>Liked</li>
-              </a>
-            </ul>
+    <header>
+      <div class="container">
+        <div class="header">
+          <div class="logo">
+            <a href="/" style="text-decoration: none; color: white">Domino</a>
           </div>
-        </div>
-      </header>
-      <div class="banner"></div>
-      <div class="main_page">
-        <div class="container">
-          <div class="models">
-            <img src="/uploads/img/model3.png" alt="" />
-            <img src="/uploads/img/model2.png" alt="" />
-            <img src="/uploads/img/model2.png" alt="" />
-            <img src="/uploads/img/model3.png" alt="" />
-            <img src="/uploads/img/model2.png" alt="" />
-            <img src="/uploads/img/model1.png" alt="" />
-            <img src="/uploads/img/model3.png" alt="" />
-            <img src="/uploads/img/model3.png" alt="" />
-            <img src="/uploads/img/model1.png" alt="" />
-            <img src="/uploads/img/model1.png" alt="" />
-            <img src="/uploads/img/model3.png" alt="" />
-            <img src="/uploads/img/model1.png" alt="" />
-            <img src="/uploads/img/model2.png" alt="" />
-            <img src="/uploads/img/model1.png" alt="" />
-            <img src="/uploads/img/model2.png" alt="" />
-          </div>
+          <ul class="navbar">
+            <a href="{% url 'products' %}">
+              <li>Products</li>
+            </a>
+            <a href="{% url 'contacts' %}">
+              <li>Contact</li>
+            </a>
+            <a href="{% url 'liked' %}">
+              <li>Liked</li>
+            </a>
+          </ul>
         </div>
       </div>
-      <section class="info">
-        <div class="container">
-          <div class="title">
-            <h1>Domino</h1>
-            <p>Что мешает тебе быть стильным?</p>
-          </div>
-          <div class="content">
-            <div class="corusel">
-              <h2>Новинки этого месяца</h2>
-              <p>Модные новинки только для вас</p>
-              <div class="swiper">
-                <div class="swiper-wrapper">
-                  {% for n in new %}
-                  <div class="swiper-slide" data-product-id="{{n.id}}">
+    </header>
+    <div class="banner"></div>
+    <section class="info">
+      <div class="container">
+        <div class="title">
+          <h1>Domino</h1>
+          <p>Что мешает тебе быть стильным?</p>
+        </div>
+        <div class="content">
+          <div class="corusel">
+            <h2>Новинки этого месяца</h2>
+            <p>Модные новинки только для вас</p>
+            <div class="swiper">
+              <div class="swiper-wrapper">
+                {% for n in new %}
+                <div class="swiper-slide" data-product-id="{{n.id}}">
+                  <a href="products/item-{{n.id}}/">
                     <div class="swiper_card">
-                      <div class="img">
-                        <a href="products/item-{{n.id}}/">
-                          <img src="{{n.main_img.url}}" alt="" />
-                        </a>
+                      <div class="swiper_img">
+                        <img src="{{n.main_img.url}}" alt="" />
                       </div>
                       <div class="info_text">
                         <h3>{{n.product_name}}</h3>
                         <p>Цена: {{n.price|intcomma}}</p>
                       </div>
                     </div>
-                  </div>
-                  {% endfor %}
+                  </a>
                 </div>
-              </div>
-            </div>
-            <div class="corusel">
-              <h2>В тренде</h2>
-              <p>Самые популярные товары недели</p>
-              <div class="swiper">
-                <div class="swiper-wrapper">
-                  {% for t in trend %}
-                  <div class="swiper-slide" data-product-id="{{t.id}}">
+                {% endfor %} {% for n in new %}
+                <div class="swiper-slide" data-product-id="{{n.id}}">
+                  <a href="products/item-{{n.id}}/">
                     <div class="swiper_card">
-                      <div class="img">
-                        <img src="{{t.main_img.url}}" alt="" />
+                      <div class="swiper_img">
+                        <img src="{{n.main_img.url}}" alt="" />
                       </div>
                       <div class="info_text">
-                        <h3>{{t.product_name}}</h3>
-                        <p>Цена: {{t.price|intcomma}}</p>
+                        <h3>{{n.product_name}}</h3>
+                        <p>Цена: {{n.price|intcomma}}</p>
                       </div>
                     </div>
-                  </div>
-                  {% endfor %}
+                  </a> 
                 </div>
+                {% endfor %} 
+                {% for n in new %}
+                <div class="swiper-slide">
+                  <div class="like" data-product-id="{{n.id}}">
+                    Ж
+                  </div>
+                  <a href="products/item-{{n.id}}/">
+                    <div class="swiper_card">
+                      <div class="swiper_img">
+                        <img src="{{n.main_img.url}}" alt="" />
+                      </div>
+                      <div class="info_text">
+                        <h3>{{n.product_name}}</h3>
+                        <p>Цена: {{n.price|intcomma}}</p>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+                {% endfor %} {% for n in new %}
+                <div class="swiper-slide" data-product-id="{{n.id}}">
+                  <a href="products/item-{{n.id}}/">
+                    <div class="swiper_card">
+                      <div class="swiper_img">
+                        <img src="{{n.main_img.url}}" alt="" />
+                      </div>
+                      <div class="info_text">
+                        <h3>{{n.product_name}}</h3>
+                        <p>Цена: {{n.price|intcomma}}</p>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+                {% endfor %}
               </div>
             </div>
-            <h2>Категории</h2>
-            <p>Находите то что ищите легко</p>
-            <div class="category">
-              <div class="cat"></div>
-              <div class="cat"></div>
-              <div class="cat"></div>
-              <div class="cat"></div>
-              <div class="cat"></div>
-              <div class="cat"></div>
-              <div class="cat"></div>
-              <div class="cat"></div>
+          </div>
+          <div class="corusel">
+            <h2>В тренде</h2>
+            <p>Самые популярные товары недели</p>
+            <div class="swiper">
+              <div class="swiper-wrapper">
+                {% for t in trend %}
+                <div class="swiper-slide" data-product-id="{{t.id}}">
+                  <div class="swiper_card">
+                    <div class="swiper_img">
+                      <img src="{{t.main_img.url}}" alt="" />
+                    </div>
+                    <div class="info_text">
+                      <h3>{{t.product_name}}</h3>
+                      <p>Цена: {{t.price|intcomma}}</p>
+                    </div>
+                  </div>
+                </div>
+                {% endfor %}
+              </div>
             </div>
           </div>
+          <h2>Категории</h2>
+          <p>Находите то что ищите легко</p>
+          <div class="category">
+            {% for category in categories %}
+              <div class="cat"><img src="{{category.category_img.url}}"></div>
+              <div class="cat"></div>
+              <div class="cat"></div>
+              <div class="cat"></div>
+              <div class="cat"></div>
+              <div class="cat"></div>
+              <div class="cat"></div>
+              <div class="cat"></div>
+            {% endfor %}
+          </div>
+          <footer>
+            <main>
+              <!-- Header в Footer -->
+              <div class="col">
+                <h1>Quick Links</h1>
+                <ul>
+                  <li><a href="#">Home</a></li>
+                  <li><a href="#">About Us</a></li>
+                  <li><a href="#">Products</a></li>
+                </ul>
+              </div>
+
+              <!-- Вопросы -->
+              <div class="col">
+                <h1>Help</h1>
+                <ul>
+                  <li><a href="#">How is the order?</a></li>
+                  <li><a href="#">How to return money?</a></li>
+                  <li><a href="#">Track my order</a></li>
+                </ul>
+              </div>
+
+              <!-- Категория -->
+              <div class="col">
+                <h1>Category Name</h1>
+                <ul>
+                  <li><a href="#">Page Name</a></li>
+                  <li><a href="#">Page Name</a></li>
+                  <li><a href="#">Page Name</a></li>
+                  <li><a href="#">Page Name</a></li>
+                  <li><a href="#">Page Name</a></li>
+                  <li><a href="#">Page Name</a></li>
+                </ul>
+              </div>
+
+              <!-- Категория -->
+              <div class="col">
+                <h1>Category Name</h1>
+                <ul>
+                  <li><a href="#">Page Name</a></li>
+                  <li><a href="#">Page Name</a></li>
+                  <li><a href="#">Page Name</a></li>
+                  <li><a href="#">Page Name</a></li>
+                  <li><a href="#">Page Name</a></li>
+                  <li><a href="#">Page Name</a></li>
+                </ul>
+              </div>
+
+              <!-- Категория -->
+              <div class="col">
+                <h1>Category Name</h1>
+                <ul>
+                  <li><a href="#">Page Name</a></li>
+                  <li><a href="#">Page Name</a></li>
+                  <li><a href="#">Page Name</a></li>
+                  <li><a href="#">Page Name</a></li>
+                  <li><a href="#">Page Name</a></li>
+                  <li><a href="#">Page Name</a></li>
+                </ul>
+              </div>
+
+              <!-- Социалки -->
+              <div class="col social">
+                <h1>Social</h1>
+                <ul>
+                  <li>
+                    <i
+                      class="fa-brands fa-tiktok"
+                      style="color: #ffffff; font-size: 20px"
+                    ></i>
+                  </li>
+                  <li>
+                    <i
+                      class="fa-brands fa-telegram"
+                      style="color: #ffffff; font-size: 20px"
+                    ></i>
+                  </li>
+                  <li>
+                    <i
+                      class="fa-brands fa-instagram"
+                      style="color: #ffffff; font-size: 20px"
+                    ></i>
+                  </li>
+                </ul>
+              </div>
+              <div class="clearfix"></div>
+            </main>
+          </footer>
         </div>
-      </section>
+      </div>
     </section>
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"
-      integrity="sha512-cOH8ndwGgPo+K7pTvMrqYbmI8u8k6Sho3js0gOqVWTmQMlLIi6TbqGWRTpf1ga8ci9H3iPsvDLr4X7xwhC/+DQ=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    ></script>
     <script src="{% static 'index.js' %}"></script>
     <script>
       const swiper = new Swiper(".swiper", {
         freeMode: true,
         breakpoints: {
-          320: {
+          300: {
             slidesPerView: 2,
-            spaceBetween: 10,
-          },
-          500: {
-            slidesPerView: 4.5,
             spaceBetween: 20,
           },
+          550: {
+            slidesPerView: 3,
+            spaceBetween: 20,
+          },
+          920: {
+            slidesPerView: 4.5,
+            spaceBetween: 20,
+          }
         },
       });
     </script>

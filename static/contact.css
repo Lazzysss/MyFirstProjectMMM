@@ -57,6 +57,7 @@ li {
 
 .container {
   width: 100%;
+  margin-top: 80px;
   background: #fff;
   border-radius: 6px;
   padding: 20px 60px 30px 40px;
@@ -209,6 +210,55 @@ marquee {
   clear: both;
 }
 
+/* Header start */
+header {
+  background-color: #000;
+  position: fixed;
+  transition: 0.3s;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  width: 100%;
+  padding: 1% 0;
+}
+.container_head {
+  max-width: 1400px;
+  width: 100%;
+  margin: 0 auto;
+}
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+header .logo {
+  font-size: 2rem;
+  color: #e0d9fd;
+}
+.navbar {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.navbar a {
+  color: #e0d9fd;
+  padding: 4px 15px;
+}
+.navbar li {
+  font-family: "Raleway", sans-serif;
+  font-size: 20px;
+  background-color: #01030158;
+  border: 1px solid transparent;
+  border-bottom: 1px solid #fff;
+  text-align: center;
+  transition: 0.1s;
+}
+.navbar li:hover {
+  border-bottom: 1px solid transparent;
+}
+/* Header end */
+
 @media only screen and (min-width: 1280px) {
   main {
     width: 1200px;
@@ -220,6 +270,9 @@ marquee {
     width: 1000px;
     display: block;
   }
+  .container_head {
+    max-width: 1040px !important;
+  }
 
   .social h1 {
     margin: 0px;
@@ -230,6 +283,9 @@ marquee {
     width: 33%;
   }
 
+  .container_head {
+    max-width: 900px !important;
+  }
   footer .col h1 {
     font-size: 14px;
   }
@@ -242,7 +298,19 @@ marquee {
   footer .col {
     width: 50%;
   }
-
+  .container_head {
+    max-width: 380px !important;
+  }
+  .navbar {
+    gap: 5px;
+    height: 100%;
+  }
+  .header .logo{
+    font-size: 1.6rem;
+  }
+  .navbar li {
+    font-size: 15px;
+  }
   footer .col h1 {
     font-size: 14px;
   }
